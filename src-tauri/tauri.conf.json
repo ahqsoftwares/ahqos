@@ -33,7 +33,7 @@
         "icons/icon.ico"
       ],
       "longDescription": "AHQ OS - Preview",
-      "shortDescription": "ahqos_prvw.exe"
+      "shortDescription": "ahqos_prvw"
     },
     "security": {
       "csp": null

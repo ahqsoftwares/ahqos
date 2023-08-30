@@ -6,7 +6,7 @@ import { exit } from "@tauri-apps/api/process";
 import { isPermissionGranted, requestPermission, sendNotification } from "@tauri-apps/api/notification";
 
 // Core Pages
-import KernelLoading from "./Main-Loading";
+import KernelLoading from "./UI/Main-Loading";
 
 async function bootError() {
     let permission = await isPermissionGranted();
@@ -19,12 +19,14 @@ async function bootError() {
 
     if (permission) {
         sendNotification({
-            title: "Error",
-            body: "Unable to boot ahqOS - Preview"
+            title: "Underprivileged",
+            body: "Unable to boot ahqOS due to insufficient permissions, re-run as \"super-user\" (i.e. \"sudo\")"
         });
     }
 
-    exit(1);
+    setTimeout(() => {
+        exit(1);
+    }, 1000);
 }
 
 export default function App() {
@@ -39,7 +41,6 @@ export default function App() {
         kernelInit((data) => setProgress(data))
             .then((data) => {
                 if (data) {
-                    console.log(data);
                     bootError();
                     setUsersArray(data);
                     setPage("login");

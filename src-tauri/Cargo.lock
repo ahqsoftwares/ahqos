@@ -28,7 +28,7 @@ dependencies = [
 
 [[package]]
 name = "ahqos-preview"
-version = "0.0.0"
+version = "0.1.0"
 dependencies = [
  "bcrypt",
  "is_elevated",
