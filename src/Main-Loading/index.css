@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer utilities {
+    .kernel-main {
+        @apply bg-black
+            w-screen h-screen
+            flex flex-col 
+            justify-center items-center text-center
+        
+            text-white text-2xl;
+    }
+
+    .kernel-main img {
+        @apply w-44 h-44 mb-[10rem];
+    }
+}
